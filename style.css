@@ -9,3 +9,8 @@
     margin-bottom: 0.25rem;
   }
 }
+
+/* -------------------- About Us -------------------- */
+#aboutUs .container {
+  width: 55%;
+}
