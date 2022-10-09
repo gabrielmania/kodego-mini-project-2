@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ginyard Bike Shop & Repair</title>
+
+  <!-------------------------- Bootstrap -------------------------->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <!-------------------------- Stylesheet -------------------------->
+  <link rel="stylesheet" href="style.css">
+
+  <!-------------------------- Fontawesome -------------------------->
+  <script src="https://kit.fontawesome.com/ed2f2fe40a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column vh-100">
+  <!-------------------------- Navbar -------------------------->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ginyard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks"
+        aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarLinks">
+        <div class="navbar-nav">
+          <a class="nav-link" href="#">Home</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu bg-dark navbar-dark">
+              <li><a class="nav-link" href="#">Bikes</a></li>
+              <li><a class="nav-link" href="#">Parts</a></li>
+              <li><a class="nav-link" href="#">Gears</a></li>
+            </ul>
+          </li>
+          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="#">Contact Us</a>
+        </div>
+        <div class="navbar-nav ms-auto text-light">
+          <a class="btn btn-outline-light" id="save" href=""><i class="fa-solid fa-heart fa-xl me-1"></i> Saved
+            Items</a>
+          <a class="btn btn-outline-light" id="cart" href=""><i class="fa-solid fa-cart-shopping fa-xl"></i> Cart</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-------------------------- Footer -------------------------->
+  <footer class="pt-4 pt-md-5 border-top mt-auto bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="mb-2 w-75" src="images/logos/logo-dark.png">
+          <small class="d-block mb-3 text-muted">&copy; 2022 Ginyard Bike Shop & Repair</small>
+        </div>
+        <div class="col-lg-2">
+          <h5>Sitemap</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Home</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Products</a>
+              <ul>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Bikes</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Parts</a></li>
+                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Gears</a></li>
+              </ul>
+            </li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Services</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">About Us</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Company Policies</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy Policies</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms and Conditions</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Social Responsibilities</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <p>Join us on our social media pages!</p>
+          <i class="fa-brands fa-square-facebook fa-2xl me-1"></i>
+          <i class="fa-brands fa-square-instagram fa-2xl me-1"></i>
+          <i class="fa-brands fa-linkedin fa-2xl me-1"></i>
+          <i class="fa-brands fa-square-twitter fa-2xl"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-------------------------- Bootstrap -------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+    crossorigin="anonymous"></script>
+
+  <!-------------------------- Scripts -------------------------->
+  <script src="app.js"></script>
+</body>
+
+</html>
