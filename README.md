@@ -1,7 +1,9 @@
 # Mini Project 2
 
 **Deadline: October 17, 2022**
+
 Updated Logo & Design
+
 Revised ppt, sitemaps and wireframes
 
 - Features & Functionalities
