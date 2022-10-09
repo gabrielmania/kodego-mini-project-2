@@ -13,7 +13,7 @@ function loadProducts(products, numProducts) {
             <p class="card-text fw-bold">
               Php ${products[i].price.toLocaleString()}.00
             </p>
-            <a href="#" class="btn btn-outline-dark d-block">Add to Cart</a>
+            <a href="#" class="btn btn-outline-dark d-block rounded-pill">Add to Cart</a>
           </div>
         </div>
       </div>
