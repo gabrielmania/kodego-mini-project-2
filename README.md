@@ -2,19 +2,16 @@
 
 **Deadline: October 17, 2022**
 
-Updated Logo & Design
+1. Updated Logo & Design
+2. Revised ppt, sitemaps and wireframes
 
-Revised ppt, sitemaps and wireframes
-
-Features & Functionalities
-
+_Features & Functionalities_
 - Mobile version compatibility
 - Add to cart feature
 - Checkout/payment gateway
 - Embedded chat/customer support
 
-Scoring Criteria (1 to 10)
-
+_Scoring Criteria (1 to 10)_
 - Design creativity
 - Clean code
 - Consistency
