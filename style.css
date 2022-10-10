@@ -1,4 +1,9 @@
 /* -------------------- Navbar -------------------- */
+nav {
+  position: absolute;
+  z-index: 3;
+}
+
 nav img {
   width: 5rem;
 }
@@ -11,6 +16,71 @@ nav img {
   #save {
     margin-right: 0;
     margin-bottom: 0.25rem;
+  }
+}
+
+/* -------------------- Heading -------------------- */
+#heading {
+  margin-bottom: 25rem;
+}
+
+#heading video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+#overlay {
+  background-color: rgba(255, 255, 255, 0.445);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+#heading .container {
+  position: relative;
+  z-index: 3;
+  top: 10rem;
+}
+
+/* X-Large Breakpoint */
+@media (max-width: 1200px) {
+  #heading {
+    margin-bottom: 30rem;
+  }
+
+  #heading .container {
+    top: 13rem;
+  }
+}
+
+/* Large Breakpoint */
+@media (max-width: 992px) {
+  #heading {
+    margin-bottom: 10rem;
+  }
+
+  #heading .container {
+    top: 4rem;
+  }
+
+  #heading img {
+    margin-bottom: 2rem;
+  }
+
+  #headingText {
+    text-align: center;
+  }
+}
+
+/* Medium Breakpoint */
+@media (max-width: 768px) {
+  #heading {
+    margin-bottom: 20rem;
+  }
+
+  #heading .container {
+    top: 8rem;
   }
 }
 
