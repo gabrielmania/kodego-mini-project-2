@@ -1,4 +1,8 @@
 /* -------------------- Navbar -------------------- */
+nav img {
+  width: 5rem;
+}
+
 #save {
   margin-right: 0.25rem;
 }
