@@ -28,21 +28,21 @@ $(window).on("load", function () {
 
 $("nav").hover(
   function () {
-    $("nav").removeClass(["bg-light", "navbar-light"]);
+    $("nav").removeClass(["bg-none", "navbar-light"]);
     $("nav").addClass(["bg-dark", "navbar-dark"]);
     $("nav .btn").removeClass("btn-outline-dark");
     $("nav .btn").addClass("btn-outline-light");
     $("nav img").attr("src", "images/logos/navbar-logo-dark.png");
-    $("nav .dropdown-menu").removeClass(["bg-light", "navbar-light"]);
+    $("nav .dropdown-menu").removeClass(["bg-none", "navbar-light"]);
     $("nav .dropdown-menu").addClass(["bg-dark", "navbar-dark"]);
   },
   function () {
     $("nav").removeClass(["bg-dark", "navbar-dark"]);
-    $("nav").addClass(["bg-light", "navbar-light"]);
+    $("nav").addClass(["bg-none", "navbar-light"]);
     $("nav .btn").removeClass("btn-outline-light");
     $("nav .btn").addClass("btn-outline-dark");
     $("nav img").attr("src", "images/logos/navbar-logo-light.png");
     $("nav .dropdown-menu").removeClass(["bg-dark", "navbar-dark"]);
-    $("nav .dropdown-menu").addClass(["bg-light", "navbar-light"]);
+    $("nav .dropdown-menu").addClass(["bg-none", "navbar-light"]);
   }
 );
