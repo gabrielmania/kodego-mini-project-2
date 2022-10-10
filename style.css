@@ -12,6 +12,7 @@ nav img {
   margin-right: 0.25rem;
 }
 
+/* Large Breakpoint */
 @media (max-width: 992px) {
   #save {
     margin-right: 0;
@@ -85,6 +86,26 @@ nav img {
 }
 
 /* -------------------- About Us -------------------- */
-#aboutUs .container {
-  width: 55%;
+/* Large Breakpoint */
+@media (max-width: 992px) {
+  #aboutUs {
+    text-align: center;
+  }
+
+  #aboutUs img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* -------------------- Footer -------------------- */
+/* Medium Breakpoint */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  footer .col-sm-6 {
+    margin: 0.5rem 0;
+  }
 }

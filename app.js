@@ -4,7 +4,7 @@ function loadProducts(products, numProducts) {
   for (let i = 0; i < numProducts; i++) {
     productsRow.append(
       `
-      <div class="col-lg-3 mb-3">
+      <div class="col-lg-3 col-md-6 mb-3">
         <div class="card h-100">
           <img src="${products[i].image}" class="card-img-top h-100">
           <div class="card-body">
