@@ -97,6 +97,11 @@ nav img {
   }
 }
 
+/* -------------------- About Us -------------------- */
+#branches .container {
+  width: 55%;
+}
+
 /* -------------------- Footer -------------------- */
 /* Medium Breakpoint */
 @media (max-width: 768px) {
@@ -109,3 +114,4 @@ nav img {
     margin: 0.5rem 0;
   }
 }
+
