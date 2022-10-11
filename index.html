@@ -279,18 +279,30 @@
           <h3>Just send us a message if you have questions about our products and inquiries!</h3>
         </div>
         <div class="col-lg-6 border p-3">
-          <form>
+          <form class="needs-validation" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Your Name</label>
               <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">
+                Please provide your name so we can properly address you.
+              </div>
+
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Your Email</label>
               <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">
+                We need your email so we can provide you with a feedback.
+              </div>
+
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
+              <textarea class="form-control" name="message" id="message" cols="30" rows="5" required></textarea>
+              <div class="invalid-feedback">
+                What's your message?
+              </div>
+
             </div>
             <button type="submit" class="btn btn-outline-dark px-5 offset-5">Send</button>
           </form>
