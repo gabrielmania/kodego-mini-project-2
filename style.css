@@ -1,3 +1,20 @@
+/* -------------------- Google Fonts -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
 /* -------------------- Navbar -------------------- */
 nav {
   position: absolute;
@@ -114,4 +131,3 @@ nav img {
     margin: 0.5rem 0;
   }
 }
-
