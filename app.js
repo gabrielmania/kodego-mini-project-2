@@ -1,3 +1,4 @@
+// Function that will load the products based on the arguments passed on the function
 function loadProducts(products, numProducts) {
   let productsRow = null;
   if (products === bikes) {
@@ -20,7 +21,10 @@ function loadProducts(products, numProducts) {
               Php ${products[i].price.toLocaleString()}.00
             </p>
             <div class="text-center">
-              <a href="#" class="btn btn-outline-dark px-4 rounded-pill"><i class="fa-solid fa-heart fa-xl"></i></a>
+              <a href="#" class="save btn btn-outline-dark px-4 rounded-pill"
+                data-name="${products[i].brand} ${products[i].model}"
+                data-price="${products[i].price}">
+                <i class="fa-solid fa-heart fa-xl"></i></a>
               <a href="#" class="btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
             </div>
           </div>
@@ -30,12 +34,23 @@ function loadProducts(products, numProducts) {
   }
 }
 
+// Window on load event
 $(window).on("load", function () {
-  loadProducts(bikes, 4);
-  loadProducts(parts, 4);
-  loadProducts(gears, 4);
+  // Upon loading of page, will render the products
+  loadProducts(bikes, 4); // Render bike products
+  loadProducts(parts, 4); // Render parts products
+  loadProducts(gears, 4); // Render gears products
+
+  // Click event on the save buttons per product to add the item on saved items
+  $(".save").click(function (evt) {
+    evt.preventDefault();
+    const name = $(this).attr("data-name");
+    const price = $(this).attr("data-price");
+    save.addToSavedItems(name, price, 1);
+  });
 });
 
+// Hover effect on the navbar
 $("nav").hover(
   function () {
     $("nav").removeClass(["bg-none", "navbar-light"]);
@@ -57,6 +72,7 @@ $("nav").hover(
   }
 );
 
+// Bootstrap validation script
 (() => {
   "use strict";
 
