@@ -46,7 +46,8 @@ $(window).on("load", function () {
     evt.preventDefault();
     const brand = $(this).attr("data-brand");
     const price = $(this).attr("data-price");
-    console.log(brand, price);
+
+    save.addToSavedItems(brand, price, 1);
   });
 });
 
@@ -100,4 +101,5 @@ $("nav").hover(
 $("#save").click(function (evt) {
   evt.preventDefault();
   $("#savedItems").toggle();
+  save.displaySavedItems();
 });
