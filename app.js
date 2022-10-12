@@ -10,8 +10,7 @@ function loadProducts(products, numProducts) {
 
   for (let i = 0; i < numProducts; i++) {
     productsRow.append(
-      `
-      <div class="col-lg-3 col-md-6 mb-3">
+      `<div class="col-lg-3 col-md-6 mb-3">
         <div class="card h-100 border border-dark">
           <img src="${products[i].image}" class="card-img-top h-100">
           <div class="card-body">
@@ -20,11 +19,13 @@ function loadProducts(products, numProducts) {
             <p class="card-text fw-bold">
               Php ${products[i].price.toLocaleString()}.00
             </p>
-            <a href="#" class="btn btn-outline-dark d-block rounded-pill">Add to Cart</a>
+            <div class="text-center">
+              <a href="#" class="btn btn-outline-dark px-4 rounded-pill"><i class="fa-solid fa-heart fa-xl"></i></a>
+              <a href="#" class="btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
+            </div>
           </div>
         </div>
-      </div>
-        `
+      </div>`
     );
   }
 }
