@@ -34,16 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarLinks">
         <div class="navbar-nav">
           <a class="nav-link" href="#">Home</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
-            </a>
-            <ul class="dropdown-menu bg-none navbar-light">
-              <li><a class="nav-link" href="#">Bikes</a></li>
-              <li><a class="nav-link" href="#">Parts</a></li>
-              <li><a class="nav-link" href="#">Gears</a></li>
-            </ul>
-          </li>
+          <a class="nav-link" href="#">Products</a>
           <a class="nav-link" href="#">Services</a>
           <a class="nav-link" href="#">About Us</a>
           <a class="nav-link" href="#">Contact Us</a>
@@ -83,7 +74,15 @@
     <div class="container">
       <h2 class="text-center mb-4">Products</h2>
       <h3>Bikes</h3>
-      <div class="row">
+      <div class="row mb-3" id="bikes">
+        <!-- Bike products will be rendered here -->
+      </div>
+      <h3>Parts</h3>
+      <div class="row mb-3" id="parts">
+        <!-- Bike products will be rendered here -->
+      </div>
+      <h3>Gears</h3>
+      <div class="row" id="gears">
         <!-- Bike products will be rendered here -->
       </div>
     </div>
@@ -95,7 +94,7 @@
       <h2 class="text-center mb-4">Our Services</h2>
       <div class="row">
         <div class="col-lg-6">
-          <div class="card mb-3">
+          <div class="card mb-3 border border-dark">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="images/services/coating.jpeg" class="img-fluid rounded-start h-100">
@@ -111,7 +110,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="card mb-3">
+          <div class="card mb-3 border border-dark">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="images/services/repair.jpg" class="img-fluid rounded-start h-100">
@@ -129,7 +128,7 @@
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <div class="card mb-3">
+          <div class="card mb-3 border border-dark">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="images/services/restoration.jpg" class="img-fluid rounded-start h-100">
@@ -273,41 +272,38 @@
 
   <!-------------------------- Contact Us -------------------------->
   <section class="py-5" id="contactUs">
-    <div class="container">
-      <h2 class="text-center mb-4">Contact Us</h2>
-      <div class="row">
-        <div class="col-lg-6 my-auto">
-          <h3>Just send us a message if you have questions about our products and services!</h3>
-        </div>
-        <div class="col-lg-6 border p-3">
-          <form class="needs-validation" novalidate>
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="name" required>
-              <div class="invalid-feedback">
-                Please provide your name so we can properly address you.
-              </div>
-
+    <div class="container text-center">
+      <h2 class="mb-4">Contact Us</h2>
+      <h5 class="mb-3">Just send us a message if you have questions about our products and services!</h5>
+      <div class="col-lg-6 border p-3 border border-dark mx-auto rounded-4">
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control borde border-dark" id="name" required>
+            <div class="invalid-feedback">
+              Please provide your name so we can properly address you.
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Your Email</label>
-              <input type="email" class="form-control" id="email" required>
-              <div class="invalid-feedback">
-                We need your email so we can provide you with a feedback.
-              </div>
 
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control border border-dark" id="email" required>
+            <div class="invalid-feedback">
+              We need your email so we can provide you with a feedback.
             </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" name="message" id="message" cols="30" rows="5" required></textarea>
-              <div class="invalid-feedback">
-                What's your message?
-              </div>
 
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control border border-dark" name="message" id="message" cols="30" rows="5"
+              required></textarea>
+            <div class="invalid-feedback">
+              What's your message?
             </div>
-            <button type="submit" class="btn btn-outline-dark px-5 offset-5">Send</button>
-          </form>
-        </div>
+
+          </div>
+          <button type="submit" class="btn btn-lg btn-outline-dark px-5 rounded-pill">Send</button>
+        </form>
       </div>
     </div>
   </section>
@@ -317,7 +313,7 @@
     <div class="container">
       <h2 class="text-center mb-4">Branches</h2>
       <div class="row mb-4">
-        <div class="col-lg-6 my-auto">
+        <div class="branchText col-lg-6 my-auto">
           <h3 class="mb-3">Taguig Branch</h3>
           <p class="mb-1">Address: Levi B. Mariano Ave, Taguig, Metro Manila</p>
           <p class="mb-1">Email: taguig_branch@ginyard.com</p>
@@ -325,13 +321,13 @@
           <p class="mb-1">Cel: 0917-548-2523</p>
         </div>
         <div class="col-lg-6">
-          <iframe width='100%' height='400px'
+          <iframe class="border border-dark rounded-4" width='100%' height='400px'
             src="https://api.mapbox.com/styles/v1/gabbmania/cl94bzpnr000014kfsm4huhqu.html?title=false&access_token=pk.eyJ1IjoiZ2FiYm1hbmlhIiwiYSI6ImNsOTI0YTl5MjFmYnozdW9pNG9rY3gwZ3UifQ.WJIQF7Xe8yfrXbbBeMcamg&zoomwheel=false#16.26/14.529374/121.061223"
-            title="Basic" style="border:none;"></iframe>
+            title="Basic"></iframe>
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-lg-6 my-auto">
+        <div class="branchText col-lg-6 my-auto">
           <h3 class="mb-3">Gen. Trias Branch</h3>
           <p class="mb-1">Address: Arnaldo Highway, Brgy. San Francisco, Gen. Trias Cavite</p>
           <p class="mb-1">Email: gentri_branch@ginyard.com</p>
@@ -339,13 +335,13 @@
           <p class="mb-1">Cel: 0917-689-9895</p>
         </div>
         <div class="col-lg-6">
-          <iframe width='100%' height='400px'
+          <iframe class="border border-dark rounded-4" width='100%' height='400px'
             src="https://api.mapbox.com/styles/v1/gabbmania/cl94bzpnr000014kfsm4huhqu.html?title=false&access_token=pk.eyJ1IjoiZ2FiYm1hbmlhIiwiYSI6ImNsOTI0YTl5MjFmYnozdW9pNG9rY3gwZ3UifQ.WJIQF7Xe8yfrXbbBeMcamg&zoomwheel=false#16.02/14.321571/120.913124"
-            title="Basic" style="border:none;"></iframe>
+            title="Basic"></iframe>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6 my-auto">
+        <div class="branchText col-lg-6 my-auto">
           <h3 class="mb-3">Calamba Branch</h3>
           <p class="mb-1">Address: Barandal Rd. Brgy. Barandal, Calamba, Laguna</p>
           <p class="mb-1">Email: calamba_branch@ginyard.com</p>
@@ -353,9 +349,9 @@
           <p class="mb-1">Cel: 0917-6003-954</p>
         </div>
         <div class="col-lg-6">
-          <iframe width='100%' height='400px'
+          <iframe class="border border-dark rounded-4" width='100%' height='400px'
             src="https://api.mapbox.com/styles/v1/gabbmania/cl94bzpnr000014kfsm4huhqu.html?title=false&access_token=pk.eyJ1IjoiZ2FiYm1hbmlhIiwiYSI6ImNsOTI0YTl5MjFmYnozdW9pNG9rY3gwZ3UifQ.WJIQF7Xe8yfrXbbBeMcamg&zoomwheel=false#15.18/14.186016/121.127796"
-            title="Basic" style="border:none;"></iframe>
+            title="Basic"></iframe>
         </div>
       </div>
     </div>
@@ -374,13 +370,7 @@
           <h5>Sitemap</h5>
           <ul class="list-unstyled text-small">
             <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Home</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Products</a>
-              <ul>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Bikes</a></li>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Parts</a></li>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Gears</a></li>
-              </ul>
-            </li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Products</a></li>
             <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Services</a></li>
             <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">About Us</a></li>
             <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Contact Us</a></li>

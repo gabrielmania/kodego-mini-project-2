@@ -1,11 +1,18 @@
 function loadProducts(products, numProducts) {
-  const productsRow = $("#products .row");
+  let productsRow = null;
+  if (products === bikes) {
+    productsRow = $("#bikes");
+  } else if (products === parts) {
+    productsRow = $("#parts");
+  } else if (products === gears) {
+    productsRow = $("#gears");
+  }
 
   for (let i = 0; i < numProducts; i++) {
     productsRow.append(
       `
       <div class="col-lg-3 col-md-6 mb-3">
-        <div class="card h-100">
+        <div class="card h-100 border border-dark">
           <img src="${products[i].image}" class="card-img-top h-100">
           <div class="card-body">
             <h5 class="card-title">${products[i].brand}</h5>
@@ -24,6 +31,8 @@ function loadProducts(products, numProducts) {
 
 $(window).on("load", function () {
   loadProducts(bikes, 4);
+  loadProducts(parts, 4);
+  loadProducts(gears, 4);
 });
 
 $("nav").hover(

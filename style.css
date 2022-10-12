@@ -1,3 +1,14 @@
+/* -------------------- Background Color -------------------- */
+body {
+  background-color: #F5EFE6;
+}
+
+#services,
+#partners,
+#contactUs {
+  background-color: #E8DFCA;
+}
+
 /* -------------------- Google Fonts -------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&display=swap');
 
@@ -114,9 +125,23 @@ nav img {
   }
 }
 
-/* -------------------- About Us -------------------- */
+/* -------------------- Branches -------------------- */
 #branches .container {
   width: 55%;
+}
+
+/* X-Large Breakpoint */
+@media (max-width: 1200px) {
+  #branches .container {
+    width: 100%;
+  }
+}
+
+/* Large Breakpoint */
+@media (max-width: 992px) {
+  #branches .branchText {
+    text-align: center;
+  }
 }
 
 /* -------------------- Footer -------------------- */
