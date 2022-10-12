@@ -22,7 +22,7 @@ function loadProducts(products, numProducts) {
             </p>
             <div class="text-center">
               <a href="#" class="save btn btn-outline-dark px-4 rounded-pill"
-                data-name="${products[i].brand} ${products[i].model}"
+                data-brand="${products[i].brand} ${products[i].model}"
                 data-price="${products[i].price}">
                 <i class="fa-solid fa-heart fa-xl"></i></a>
               <a href="#" class="btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
@@ -44,9 +44,9 @@ $(window).on("load", function () {
   // Click event on the save buttons per product to add the item on saved items
   $(".save").click(function (evt) {
     evt.preventDefault();
-    const name = $(this).attr("data-name");
+    const brand = $(this).attr("data-brand");
     const price = $(this).attr("data-price");
-    save.addToSavedItems(name, price, 1);
+    console.log(brand, price);
   });
 });
 
@@ -95,3 +95,9 @@ $("nav").hover(
     );
   });
 })();
+
+// Click event will show the saved items
+$("#save").click(function (evt) {
+  evt.preventDefault();
+  $("#savedItems").toggle();
+});
