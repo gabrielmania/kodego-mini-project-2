@@ -59,7 +59,8 @@ nav img {
 
 /* -------------------- Heading -------------------- */
 #heading {
-  margin-bottom: 25rem;
+  /* margin-bottom: 25rem; */
+  min-height: 90vh;
 }
 
 #heading video {
@@ -83,10 +84,6 @@ nav img {
 
 /* X-Large Breakpoint */
 @media (max-width: 1200px) {
-  #heading {
-    margin-bottom: 30rem;
-  }
-
   #heading .container {
     top: 13rem;
   }
@@ -94,10 +91,6 @@ nav img {
 
 /* Large Breakpoint */
 @media (max-width: 992px) {
-  #heading {
-    margin-bottom: 10rem;
-  }
-
   #heading .container {
     top: 4rem;
   }
@@ -113,10 +106,6 @@ nav img {
 
 /* Medium Breakpoint */
 @media (max-width: 768px) {
-  #heading {
-    margin-bottom: 20rem;
-  }
-
   #heading .container {
     top: 8rem;
   }
