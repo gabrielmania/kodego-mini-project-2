@@ -66,7 +66,10 @@ const save = {
     this.savedItems.forEach(function (el, i) {
       console.log(el, i);
       if (el.brand === brand) {
-        save.savedItems.splice(i, 1);
+        el.qty--;
+        if (el.qty === 0) {
+          save.savedItems.splice(i, 1);
+        }
       }
     });
 
