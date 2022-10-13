@@ -47,6 +47,7 @@ $(window).on("load", function () {
     const brand = $(this).attr("data-brand");
     const price = $(this).attr("data-price");
 
+    console.log(`${brand} costing ${price} added to saved items!`);
     save.addToSavedItems(brand, price, 1);
   });
 });
@@ -73,6 +74,19 @@ $("nav").hover(
   }
 );
 
+// Click event will show the saved items
+$("#save").click(function (evt) {
+  evt.preventDefault();
+  $("#savedItems").toggle();
+  save.displaySavedItems();
+});
+
+// Click event for clearing the saved items
+$("#clearSave").click(function () {
+  save.clearSavedItems();
+  save.displaySavedItems();
+});
+
 // Bootstrap validation script
 (() => {
   "use strict";
@@ -96,10 +110,3 @@ $("nav").hover(
     );
   });
 })();
-
-// Click event will show the saved items
-$("#save").click(function (evt) {
-  evt.preventDefault();
-  $("#savedItems").toggle();
-  save.displaySavedItems();
-});
