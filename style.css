@@ -55,6 +55,11 @@ nav img {
   position: absolute;
   z-index: 4;
   top: 10rem;
+  min-width: 30vw;
+}
+
+#savedItems input {
+    width: 10%;
 }
 
 /* -------------------- Heading -------------------- */
