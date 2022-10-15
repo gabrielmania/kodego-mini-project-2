@@ -79,6 +79,12 @@ $(window).on("load", function () {
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#services",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#aboutUs",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#contactUs",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#products",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#services",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#aboutUs",
+    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#contactUs",
   ];
 
   let productsUrls = [
@@ -87,6 +93,11 @@ $(window).on("load", function () {
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#bikes",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#parts",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#gears",
+    "https://gabrielmania.github.io/kodego-mini-project-2/products.html",
+    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#",
+    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#bikes",
+    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#parts",
+    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#gears",
   ];
 
   for (let url of indexUrls) {
@@ -107,18 +118,22 @@ $(window).on("load", function () {
     }
   }
 
-  let checkoutUrl =
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/checkout.html";
-  if ($(document)[0].URL === checkoutUrl) {
-    // To append the number of items in the cart
-    $("#checkoutItems h4").append(
-      `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
-    );
+  let checkoutUrl = [
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/checkout.html",
+    "https://gabrielmania.github.io/kodego-mini-project-2/checkout.html",
+  ];
 
-    // To render the items in the cart in the checkout page
-    let output = "";
-    cart.cartItems.forEach(function (el) {
-      output += `
+  for (let url in checkoutUrl) {
+    if ($(document)[0].URL === checkoutUrl) {
+      // To append the number of items in the cart
+      $("#checkoutItems h4").append(
+        `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
+      );
+
+      // To render the items in the cart in the checkout page
+      let output = "";
+      cart.cartItems.forEach(function (el) {
+        output += `
       <li class="list-group-item d-flex justify-content-between lh-sm">
       <div>
         <h6 class="my-0">${el.brand}</h6>
@@ -128,16 +143,17 @@ $(window).on("load", function () {
       <span class="text-muted">${formatter.format(el.price * el.qty)}</span>
       </li>
     `;
-    });
+      });
 
-    //  Append the total price in the bottom of the cart items at the checkout page
-    output += `
+      //  Append the total price in the bottom of the cart items at the checkout page
+      output += `
     <li class="list-group-item d-flex justify-content-between">
       <span>Total Price</span>
       <strong>${formatter.format(cart.computeTotalPrice())}</strong>
     </li>
   `;
-    $("#checkoutItems ul").html(output);
+      $("#checkoutItems ul").html(output);
+    }
   }
 
   // Click event on the save buttons per product to add the item on saved items
