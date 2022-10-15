@@ -46,11 +46,11 @@ function loadProducts(products, numProducts) {
               ${formatter.format(products[i].price)}
             </p>
             <div class="text-center">
-              <a href="#" class="save btn btn-outline-dark px-4 rounded-pill"
+              <a href="#" class="cardBtn save btn btn-outline-dark px-4 rounded-pill"
                 data-brand="${products[i].brand} ${products[i].model}"
                 data-price="${products[i].price}">
                 <i class="fa-solid fa-heart fa-xl"></i></a>
-              <a href="#" class="btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
+              <a href="#" class="cardBtn btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
             </div>
           </div>
         </div>

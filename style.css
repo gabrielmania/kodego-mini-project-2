@@ -60,7 +60,7 @@ nav img {
 }
 
 #savedItems input {
-    width: 10%;
+  width: 10%;
 }
 
 /* -------------------- Heading -------------------- */
@@ -114,6 +114,15 @@ nav img {
 @media (max-width: 768px) {
   #heading .container {
     top: 8rem;
+  }
+}
+
+/* -------------------- Products -------------------- */
+/* XX-Large Breakpoint */
+@media (max-width: 1400px) {
+  #products .cardBtn {
+    display: block;
+    margin-bottom: 0.25rem;
   }
 }
 
