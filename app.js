@@ -64,6 +64,7 @@ $(window).on("load", function () {
   save.loadItems();
   let indexUrls = [
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#products",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#services",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#aboutUs",
