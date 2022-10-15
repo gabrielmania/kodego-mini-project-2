@@ -11,6 +11,12 @@ const cart = {
   // Load from local storage
   loadCart: function () {
     this.cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
+
+    if (this.cartItems === null) {
+      return (this.cartItems = []);
+    } else {
+      return this.cartItems;
+    }
   },
 
   // Add item and saves it to local storage

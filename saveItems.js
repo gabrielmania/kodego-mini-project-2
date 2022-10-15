@@ -11,6 +11,12 @@ const save = {
   // Load from local storage
   loadItems: function () {
     this.savedItems = JSON.parse(sessionStorage.getItem("savedItems"));
+
+    if (this.savedItems === null) {
+      return (this.savedItems = []);
+    } else {
+      return this.savedItems;
+    }
   },
 
   // Add item and saves it to local storage
