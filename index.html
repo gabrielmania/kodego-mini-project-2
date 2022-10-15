@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100" onload="loadProducts(bikes, 4), loadProducts(parts, 4), loadProducts(gears, 4)">
   <!-------------------------- Navbar -------------------------->
   <nav class="navbar navbar-expand-lg">
     <div class=" container-fluid">
@@ -40,7 +40,8 @@
           <a class="nav-link" href="#contactUs">Contact Us</a>
         </div>
         <div class="navbar-nav ms-auto text-light">
-          <a class="btn btn-outline-dark rounded-pill px-4" id="save" href="#"><i class="fa-solid fa-heart fa-xl me-1"></i>
+          <a class="btn btn-outline-dark rounded-pill px-4" id="save" href="#"><i
+              class="fa-solid fa-heart fa-xl me-1"></i>
             Saved
             Items</a>
           <a class="btn btn-outline-dark rounded-pill px-4" id="cart" href="#"><i

@@ -28,6 +28,35 @@ const formatter = new Intl.NumberFormat("en-US", {
   currency: "PHP",
 });
 
+// Window on load event
+$(window).on("load", function () {
+  // Load saved items and cart items every reload
+  save.loadItems();
+  cart.loadCart();
+
+  // Click event on the save buttons per product to add the item on saved items
+  $(".save").click(function (evt) {
+    evt.preventDefault();
+    const brand = $(this).attr("data-brand");
+    const price = $(this).attr("data-price");
+
+    console.log(`${brand} costing ${price} added to saved items!`);
+    save.addToSavedItems(brand, price, 1);
+    save.displaySavedItems();
+  });
+
+  // Click event on the save buttons per product to add the item on saved items
+  $(".addToCart").click(function (evt) {
+    evt.preventDefault();
+    const brand = $(this).attr("data-brand");
+    const price = $(this).attr("data-price");
+
+    console.log(`${brand} costing ${price} added to cart!`);
+    cart.addToCart(brand, price, 1);
+    cart.displayCartItems();
+  });
+});
+
 // Function that will load the products based on the arguments passed on the function
 function loadProducts(products, numProducts) {
   let productsRow = null;
@@ -67,117 +96,38 @@ function loadProducts(products, numProducts) {
   }
 }
 
-// Window on load event
-$(window).on("load", function () {
-  save.loadItems();
+function loadCheckoutPageItems() {
   cart.loadCart();
+  
+  // To append the number of items in the cart
+  $("#checkoutItems h4").append(
+    `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
+  );
 
-  let indexUrls = [
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#products",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#services",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#aboutUs",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#contactUs",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#products",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#services",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#aboutUs",
-    "https://gabrielmania.github.io/kodego-mini-project-2/index.html#contactUs",
-  ];
-
-  let productsUrls = [
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#bikes",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#parts",
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#gears",
-    "https://gabrielmania.github.io/kodego-mini-project-2/products.html",
-    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#",
-    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#bikes",
-    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#parts",
-    "https://gabrielmania.github.io/kodego-mini-project-2/products.html#gears",
-  ];
-
-  for (let url of indexUrls) {
-    if ($(document)[0].URL === url) {
-      // Upon loading of page, will render the products
-      loadProducts(bikes, 4); // Render bike products
-      loadProducts(parts, 4); // Render parts products
-      loadProducts(gears, 4); // Render gears products
-    }
-  }
-
-  for (let url of productsUrls) {
-    if ($(document)[0].URL === url) {
-      // Upon loading of page, will render the products
-      loadProducts(bikes, 12); // Render bike products
-      loadProducts(parts, 12); // Render parts products
-      loadProducts(gears, 12); // Render gears products
-    }
-  }
-
-  let checkoutUrl = [
-    "file:///home/gpmania/Desktop/kodego-mini-project-2/checkout.html",
-    "https://gabrielmania.github.io/kodego-mini-project-2/checkout.html",
-  ];
-
-  for (let url in checkoutUrl) {
-    if ($(document)[0].URL === checkoutUrl) {
-      // To append the number of items in the cart
-      $("#checkoutItems h4").append(
-        `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
-      );
-
-      // To render the items in the cart in the checkout page
-      let output = "";
-      cart.cartItems.forEach(function (el) {
-        output += `
-      <li class="list-group-item d-flex justify-content-between lh-sm">
-      <div>
-        <h6 class="my-0">${el.brand}</h6>
-        <small class="text-muted">Quantity: ${el.qty} 
-          ${el.qty <= 1 ? "set" : "sets"}</small>
-      </div>
-      <span class="text-muted">${formatter.format(el.price * el.qty)}</span>
-      </li>
-    `;
-      });
-
-      //  Append the total price in the bottom of the cart items at the checkout page
-      output += `
-    <li class="list-group-item d-flex justify-content-between">
-      <span>Total Price</span>
-      <strong>${formatter.format(cart.computeTotalPrice())}</strong>
-    </li>
-  `;
-      $("#checkoutItems ul").html(output);
-    }
-  }
-
-  // Click event on the save buttons per product to add the item on saved items
-  $(".save").click(function (evt) {
-    evt.preventDefault();
-    const brand = $(this).attr("data-brand");
-    const price = $(this).attr("data-price");
-
-    console.log(`${brand} costing ${price} added to saved items!`);
-    save.addToSavedItems(brand, price, 1);
-    save.displaySavedItems();
+  // To render the items in the cart in the checkout page
+  let output = "";
+  cart.cartItems.forEach(function (el) {
+    output += `
+  <li class="list-group-item d-flex justify-content-between lh-sm">
+  <div>
+    <h6 class="my-0">${el.brand}</h6>
+    <small class="text-muted">Quantity: ${el.qty} 
+      ${el.qty <= 1 ? "set" : "sets"}</small>
+  </div>
+  <span class="text-muted">${formatter.format(el.price * el.qty)}</span>
+  </li>
+`;
   });
 
-  // Click event on the save buttons per product to add the item on saved items
-  $(".addToCart").click(function (evt) {
-    evt.preventDefault();
-    const brand = $(this).attr("data-brand");
-    const price = $(this).attr("data-price");
-
-    console.log(`${brand} costing ${price} added to cart!`);
-    cart.addToCart(brand, price, 1);
-    cart.displayCartItems();
-  });
-});
+  //  Append the total price in the bottom of the cart items at the checkout page
+  output += `
+<li class="list-group-item d-flex justify-content-between">
+  <span>Total Price</span>
+  <strong>${formatter.format(cart.computeTotalPrice())}</strong>
+</li>
+`;
+  $("#checkoutItems ul").html(output);
+}
 
 // Hover effect on the navbar
 $("nav").hover(

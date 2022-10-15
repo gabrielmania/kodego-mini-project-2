@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100" onload="loadCheckoutPageItems()">
   <!-------------------------- Navbar -------------------------->
   <nav class="navbar navbar-expand-lg">
     <div class=" container-fluid">
@@ -42,35 +42,6 @@
       </div>
     </div>
   </nav>
-
-  <!-------------------------- Saved Items -------------------------->
-  <div class="p-3 border border-dark" id="savedItems">
-    <h4 class="d-inline">Saved Items</h4>
-    <div id="output" class="text-center text-muted">
-      <!-- Message will appear here if no items in the saved item -->
-    </div>
-    <ul>
-      <!-- List of items saved will be rendered here -->
-    </ul>
-    <div class="d-block text-center">
-      <a id="clearSave" class="btn btn-warning">Clear All</a>
-    </div>
-  </div>
-
-  <!-------------------------- Cart Items -------------------------->
-  <div class="p-3 border border-dark" id="cartItems">
-    <h4 class="d-inline">Cart</h4>
-    <div id="output" class="text-center text-muted">
-      <!-- Message will appear here if no items in the cart -->
-    </div>
-    <ul>
-      <!-- List of items in cart will be rendered here -->
-    </ul>
-    <div class="d-block text-center">
-      <a id="checkout" class="btn btn-success" href="checkout.html">Checkout</a>
-      <a id="clearCart" class="btn btn-warning">Clear All</a>
-    </div>
-  </div>
 
   <!-------------------------- Checkout Form -------------------------->
   <div class="container pb-5">
