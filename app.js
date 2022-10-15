@@ -50,7 +50,9 @@ function loadProducts(products, numProducts) {
                 data-brand="${products[i].brand} ${products[i].model}"
                 data-price="${products[i].price}">
                 <i class="fa-solid fa-heart fa-xl"></i></a>
-              <a href="#" class="cardBtn btn btn-outline-dark px-5 rounded-pill">Add to Cart</a>
+              <a href="#" class="cardBtn addToCart btn btn-outline-dark px-5 rounded-pill"
+                data-brand="${products[i].brand} ${products[i].model}"
+                data-price="${products[i].price}">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -62,6 +64,8 @@ function loadProducts(products, numProducts) {
 // Window on load event
 $(window).on("load", function () {
   save.loadItems();
+  cart.loadCart();
+
   let indexUrls = [
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#",
@@ -106,6 +110,17 @@ $(window).on("load", function () {
     save.addToSavedItems(brand, price, 1);
     save.displaySavedItems();
   });
+
+  // Click event on the save buttons per product to add the item on saved items
+  $(".addToCart").click(function (evt) {
+    evt.preventDefault();
+    const brand = $(this).attr("data-brand");
+    const price = $(this).attr("data-price");
+
+    console.log(`${brand} costing ${price} added to cart!`);
+    cart.addToCart(brand, price, 1);
+    cart.displayCartItems();
+  });
 });
 
 // Hover effect on the navbar
@@ -137,10 +152,23 @@ $("#save").click(function (evt) {
   save.displaySavedItems();
 });
 
+// Click event will show the cart items
+$("#cart").click(function (evt) {
+  evt.preventDefault();
+  $("#cartItems").toggle();
+  cart.displayCartItems();
+});
+
 // Click event for clearing the saved items
 $("#clearSave").click(function () {
   save.clearSavedItems();
   save.displaySavedItems();
+});
+
+// Click event for clearing the saved items
+$("#clearCart").click(function () {
+  cart.clearCartItems();
+  cart.displayCartItems();
 });
 
 // For formatting number to currency format
@@ -148,3 +176,5 @@ const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "PHP",
 });
+
+

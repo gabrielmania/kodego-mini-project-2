@@ -54,13 +54,30 @@
   <!-------------------------- Saved Items -------------------------->
   <section class="p-3 border border-dark" id="savedItems">
     <h4 class="d-inline">Saved Items</h4>
-    <div class="text-center text-muted">
+    <div id="output" class="text-center text-muted">
       <!-- Message will appear here if no items in the saved item -->
     </div>
     <ul>
       <!-- List of items saved will be rendered here -->
     </ul>
-    <button id="clearSave" class="btn btn-warning offset-5">Clear All</button>
+    <div class="d-block text-center">
+      <a id="clearSave" class="btn btn-warning">Clear All</a>
+    </div>
+  </section>
+
+  <!-------------------------- Cart Items -------------------------->
+  <section class="p-3 border border-dark" id="cartItems">
+    <h4 class="d-inline">Cart</h4>
+    <div id="output" class="text-center text-muted">
+      <!-- Message will appear here if no items in the cart -->
+    </div>
+    <ul>
+      <!-- List of items in cart will be rendered here -->
+    </ul>
+    <div class="d-block text-center">
+      <a id="checkout" class="btn btn-success">Checkout</a>
+      <a id="clearCart" class="btn btn-warning">Clear All</a>
+    </div>
   </section>
 
   <!-------------------------- Heading -------------------------->
@@ -435,6 +452,7 @@
   <!-------------------------- Scripts -------------------------->
   <script src="products.js"></script>
   <script src="saveItems.js"></script>
+  <script src="cartItems.js"></script>
   <script src="app.js"></script>
 </body>
 

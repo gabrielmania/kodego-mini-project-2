@@ -36,7 +36,7 @@ const save = {
 
     if (!this.savedItems.length) {
       output = "You have not yet saved any item.";
-      $("#savedItems div").html(output);
+      $("#savedItems #output").html(output);
       $("#savedItems ul").html("");
     } else {
       for (const item of this.savedItems) {
@@ -54,8 +54,14 @@ const save = {
         <i class="fa-solid fa-trash"></i></a></li>`;
       }
 
-      $("#savedItems div").html("");
+      $("#savedItems #output").html("");
       $("#savedItems ul").html(output);
+    }
+
+    if (!this.savedItems.length) {
+      $("#savedItems #clearSave").addClass("disabled");
+    } else if (this.savedItems.length > 0) {
+      $("#savedItems #clearSave").removeClass("disabled");
     }
 
     // For removing item in saved items
