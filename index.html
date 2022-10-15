@@ -33,11 +33,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarLinks">
         <div class="navbar-nav">
-          <a class="nav-link" href="#">Home</a>
-          <a class="nav-link" href="#">Products</a>
-          <a class="nav-link" href="#">Services</a>
-          <a class="nav-link" href="#">About Us</a>
-          <a class="nav-link" href="#">Contact Us</a>
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="#products">Products</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#aboutUs">About Us</a>
+          <a class="nav-link" href="#contactUs">Contact Us</a>
         </div>
         <div class="navbar-nav ms-auto text-light">
           <a class="btn btn-outline-dark rounded-pill" id="save" href="#"><i class="fa-solid fa-heart fa-xl me-1"></i>
@@ -51,12 +51,16 @@
     </div>
   </nav>
 
-  <section class="p-3" id="savedItems">
-    <h4>Saved Items</h4>
+  <!-------------------------- Saved Items -------------------------->
+  <section class="p-3 border border-dark" id="savedItems">
+    <h4 class="d-inline">Saved Items</h4>
+    <div class="text-center text-muted">
+      <!-- Message will appear here if no items in the saved item -->
+    </div>
     <ul>
-
+      <!-- List of items saved will be rendered here -->
     </ul>
-    <button id="clearSave" class="btn btn-primary">Clear All</button>
+    <button id="clearSave" class="btn btn-warning offset-5">Clear All</button>
   </section>
 
   <!-------------------------- Heading -------------------------->
@@ -82,17 +86,32 @@
   <section class="py-5" id="products">
     <div class="container">
       <h2 class="text-center mb-4">Products</h2>
-      <h3>Bikes</h3>
-      <div class="row mb-3" id="bikes">
-        <!-- Bike products will be rendered here -->
+      <div class="mb-3">
+        <h3>Bikes</h3>
+        <div class="row" id="bikes">
+          <!-- Bike products will be rendered here -->
+        </div>
+        <div class="text-center">
+          <a class="btn btn-outline-dark px-3" href="products.html#bikes">View More</a>
+        </div>
       </div>
-      <h3>Parts</h3>
-      <div class="row mb-3" id="parts">
-        <!-- Bike products will be rendered here -->
+      <div class="mb-3">
+        <h3>Parts</h3>
+        <div class="row" id="parts">
+          <!-- Bike products will be rendered here -->
+        </div>
+        <div class="text-center">
+          <a class="btn btn-outline-dark px-3" href="products.html#parts">View More</a>
+        </div>
       </div>
-      <h3>Gears</h3>
-      <div class="row" id="gears">
-        <!-- Bike products will be rendered here -->
+      <div>
+        <h3>Gears</h3>
+        <div class="row" id="gears">
+          <!-- Bike products will be rendered here -->
+        </div>
+        <div class="text-center">
+          <a class="btn btn-outline-dark px-3" href="products.html#gears">View More</a>
+        </div>
       </div>
     </div>
   </section>

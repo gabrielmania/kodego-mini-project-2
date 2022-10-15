@@ -54,12 +54,19 @@ nav img {
   background-color: #F5EFE6;
   position: absolute;
   z-index: 4;
-  top: 10rem;
+  top: 6rem;
+  right: 1rem;
+  min-width: 30vw;
+}
+
+#savedItems input {
+    width: 10%;
 }
 
 /* -------------------- Heading -------------------- */
 #heading {
-  margin-bottom: 25rem;
+  /* margin-bottom: 25rem; */
+  min-height: 90vh;
 }
 
 #heading video {
@@ -83,10 +90,6 @@ nav img {
 
 /* X-Large Breakpoint */
 @media (max-width: 1200px) {
-  #heading {
-    margin-bottom: 30rem;
-  }
-
   #heading .container {
     top: 13rem;
   }
@@ -94,10 +97,6 @@ nav img {
 
 /* Large Breakpoint */
 @media (max-width: 992px) {
-  #heading {
-    margin-bottom: 10rem;
-  }
-
   #heading .container {
     top: 4rem;
   }
@@ -113,10 +112,6 @@ nav img {
 
 /* Medium Breakpoint */
 @media (max-width: 768px) {
-  #heading {
-    margin-bottom: 20rem;
-  }
-
   #heading .container {
     top: 8rem;
   }
