@@ -48,7 +48,7 @@ const save = {
         <a class="increaseQty btn btn-secondary btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-plus"></i></a> -
-        Total Price: <strong>Php ${item.price * item.qty}</strong>
+        Price: <stron> ${formatter.format(item.price * item.qty)}</strong>
         <a class="removeItem btn btn-danger btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-trash"></i></a></li>`;

@@ -25,6 +25,7 @@
 // Function that will load the products based on the arguments passed on the function
 function loadProducts(products, numProducts) {
   let productsRow = null;
+
   if (products === bikes) {
     productsRow = $("#bikes");
   } else if (products === parts) {
@@ -42,7 +43,7 @@ function loadProducts(products, numProducts) {
             <h5 class="card-title">${products[i].brand}</h5>
             <p class="card-text">${products[i].model}</p>
             <p class="card-text fw-bold">
-              Php ${products[i].price.toLocaleString()}.00
+              ${formatter.format(products[i].price)}
             </p>
             <div class="text-center">
               <a href="#" class="save btn btn-outline-dark px-4 rounded-pill"
@@ -109,4 +110,10 @@ $("#save").click(function (evt) {
 $("#clearSave").click(function () {
   save.clearSavedItems();
   save.displaySavedItems();
+});
+
+// For formatting number to currency format
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "PHP",
 });

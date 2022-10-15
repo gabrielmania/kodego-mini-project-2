@@ -54,7 +54,8 @@ nav img {
   background-color: #F5EFE6;
   position: absolute;
   z-index: 4;
-  top: 10rem;
+  top: 6rem;
+  right: 1rem;
   min-width: 30vw;
 }
 
