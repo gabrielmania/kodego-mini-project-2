@@ -167,3 +167,23 @@ nav img {
     margin: 0.5rem 0;
   }
 }
+
+/* -------------------- Checkout -------------------- */
+#paymentOptions img {
+  height: 5rem;
+}
+
+#paymentOptions input[type=radio] {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type=radio]~div {
+  display: inline-block;
+  border: 3px solid transparent;
+}
+
+input[type=radio]:checked~div {
+  border: 3px solid blue;
+}

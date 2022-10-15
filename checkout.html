@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ginyard Bike Shop & Repair</title>
+
+  <!-------------------------- Bootstrap -------------------------->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <!-------------------------- Stylesheet -------------------------->
+  <link rel="stylesheet" href="style.css">
+
+  <!-------------------------- Fontawesome -------------------------->
+  <script src="https://kit.fontawesome.com/ed2f2fe40a.js" crossorigin="anonymous"></script>
+
+  <!-------------------------- jQuery -------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+
+<body class="d-flex flex-column vh-100">
+  <!-------------------------- Navbar -------------------------->
+  <nav class="navbar navbar-expand-lg">
+    <div class=" container-fluid">
+      <img class="me-2" src="images/logos/navbar-logo-light.png" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks"
+        aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarLinks">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.html#products">Products</a>
+          <a class="nav-link" href="index.html#services">Services</a>
+          <a class="nav-link" href="index.html#aboutUs">About Us</a>
+          <a class="nav-link" href="index.html#contactUs">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-------------------------- Saved Items -------------------------->
+  <div class="p-3 border border-dark" id="savedItems">
+    <h4 class="d-inline">Saved Items</h4>
+    <div id="output" class="text-center text-muted">
+      <!-- Message will appear here if no items in the saved item -->
+    </div>
+    <ul>
+      <!-- List of items saved will be rendered here -->
+    </ul>
+    <div class="d-block text-center">
+      <a id="clearSave" class="btn btn-warning">Clear All</a>
+    </div>
+  </div>
+
+  <!-------------------------- Cart Items -------------------------->
+  <div class="p-3 border border-dark" id="cartItems">
+    <h4 class="d-inline">Cart</h4>
+    <div id="output" class="text-center text-muted">
+      <!-- Message will appear here if no items in the cart -->
+    </div>
+    <ul>
+      <!-- List of items in cart will be rendered here -->
+    </ul>
+    <div class="d-block text-center">
+      <a id="checkout" class="btn btn-success" href="checkout.html">Checkout</a>
+      <a id="clearCart" class="btn btn-warning">Clear All</a>
+    </div>
+  </div>
+
+  <!-------------------------- Checkout Form -------------------------->
+  <div class="container pb-5">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4 w-25" src="images/logos/logo-light.png">
+        <h2>Checkout</h2>
+      </div>
+
+      <div class="row g-5">
+        <div id="checkoutItems" class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Your cart</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <!-- Cart items will be rendered here -->
+          </ul>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Billing address</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <input type="text" class="form-control" id="username" placeholder="Username" required>
+                  <div class="invalid-feedback">
+                    Your username is required.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <label for="state" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Makati City" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label for="state" class="form-label">Province</label>
+                <input type="text" class="form-control" id="province" placeholder="Metro Manila" required>
+                <div class="invalid-feedback">
+                  Please provide a valid province.
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="1224" required>
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="same-address">
+              <label class="form-check-label" for="same-address">Shipping address is the same as my billing
+                address</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="save-info">
+              <label class="form-check-label" for="save-info">Save this information for next time</label>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="mb-3">Payment</h4>
+
+            <div id="paymentOptions" class="my-3">
+              <div class="form-check d-inline p-0">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <div>
+                  <label class="form-check-label d-inline" for="credit"><img src="images/payment/credit-card.png"
+                      alt=""></label>
+                </div>
+              </div>
+              <div class="form-check d-inline p-0">
+                <input id="gcash" name="paymentMethod" type="radio" class="form-check-input" required>
+                <div>
+                  <label class="form-check-label d-inline" for="gcash"><img src="images/payment/gcash.png"
+                      alt=""></label>
+                </div>
+              </div>
+              <div class="form-check d-inline p-0">
+                <input id="paymaya" name="paymentMethod" type="radio" class="form-check-input" required>
+                <div>
+                  <label class="form-check-label d-inline" for="paymaya"><img src="images/payment/paymaya.png"
+                      alt=""></label>
+                </div>
+              </div>
+              <div class="form-check d-inline p-0">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <div>
+                  <label class="form-check-label d-inline" for="paypal"><img src="images/payment/paypal.png"
+                      alt=""></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Credit card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-------------------------- Footer -------------------------->
+  <footer class="pt-4 pt-md-5 border-top mt-auto bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="mb-2 w-75" src="images/logos/logo-dark.png">
+          <small class="d-block mb-3 text-muted">&copy; 2022 Ginyard Bike Shop & Repair</small>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <h5>Sitemap</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Home</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Products</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Services</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">About Us</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Company Policies</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy Policies</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms and Conditions</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Social Responsibilities</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <p>Join us on our social media pages!</p>
+          <i class="fa-brands fa-square-facebook fa-2xl me-1"></i>
+          <i class="fa-brands fa-square-instagram fa-2xl me-1"></i>
+          <i class="fa-brands fa-linkedin fa-2xl me-1"></i>
+          <i class="fa-brands fa-square-twitter fa-2xl"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-------------------------- Bootstrap -------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+    crossorigin="anonymous"></script>
+
+  <!-------------------------- Scripts -------------------------->
+  <script src="products.js"></script>
+  <script src="saveItems.js"></script>
+  <script src="cartItems.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

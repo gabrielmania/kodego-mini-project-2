@@ -47,7 +47,7 @@ const cart = {
         <i class="fa-solid fa-minus"></i></a>
         <a class="increaseQty btn btn-secondary btn-sm" href="#" 
         data-brand="${item.brand}">
-        <i class="fa-solid fa-plus"></i></a> -
+        <i class="fa-solid fa-plus"></i></a>
         Price: <stron> ${formatter.format(item.price * item.qty)}</strong>
         <a class="removeItem btn btn-danger btn-sm" href="#" 
         data-brand="${item.brand}">
@@ -129,5 +129,15 @@ const cart = {
     });
 
     this.saveCart();
+  },
+
+  computeTotalPrice: function () {
+    this.loadCart();
+    let totalPrice = 0;
+    this.cartItems.forEach(function (el, i) {
+      totalPrice += el.price * el.qty;
+    });
+
+    return totalPrice;
   },
 };

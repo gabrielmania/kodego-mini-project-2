@@ -22,6 +22,12 @@
   });
 })();
 
+// For formatting number to currency format
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "PHP",
+});
+
 // Function that will load the products based on the arguments passed on the function
 function loadProducts(products, numProducts) {
   let productsRow = null;
@@ -77,6 +83,7 @@ $(window).on("load", function () {
 
   let productsUrls = [
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#bikes",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#parts",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#gears",
@@ -99,6 +106,32 @@ $(window).on("load", function () {
       loadProducts(gears, 12); // Render gears products
     }
   }
+
+  $("#checkoutItems h4").append(
+    `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
+  );
+
+  let output = "";
+  cart.cartItems.forEach(function (el) {
+    output += `
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+      <div>
+        <h6 class="my-0">${el.brand}</h6>
+        <small class="text-muted">Quantity: ${el.qty} 
+          ${el.qty <= 1 ? "set" : "sets"}</small>
+      </div>
+      <span class="text-muted">${formatter.format(el.price * el.qty)}</span>
+      </li>
+    `;
+  });
+
+  output += `
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total Price</span>
+      <strong>${formatter.format(cart.computeTotalPrice())}</strong>
+    </li>
+  `;
+  $("#checkoutItems ul").html(output);
 
   // Click event on the save buttons per product to add the item on saved items
   $(".save").click(function (evt) {
@@ -149,6 +182,7 @@ $("nav").hover(
 $("#save").click(function (evt) {
   evt.preventDefault();
   $("#savedItems").toggle();
+  $("#cartItems").css("display", "none");
   save.displaySavedItems();
 });
 
@@ -156,6 +190,7 @@ $("#save").click(function (evt) {
 $("#cart").click(function (evt) {
   evt.preventDefault();
   $("#cartItems").toggle();
+  $("#savedItems").css("display", "none");
   cart.displayCartItems();
 });
 
@@ -171,8 +206,8 @@ $("#clearCart").click(function () {
   cart.displayCartItems();
 });
 
-// For formatting number to currency format
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "PHP",
+// Toggle the saved items and cart off when clicked outside of the section
+$("section").click(function () {
+  $("#savedItems").css("display", "none");
+  $("#cartItems").css("display", "none");
 });
