@@ -61,10 +61,38 @@ function loadProducts(products, numProducts) {
 
 // Window on load event
 $(window).on("load", function () {
-  // Upon loading of page, will render the products
-  loadProducts(bikes, 4); // Render bike products
-  loadProducts(parts, 4); // Render parts products
-  loadProducts(gears, 4); // Render gears products
+  let indexUrls = [
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#products",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#services",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#aboutUs",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#contactUs",
+  ];
+
+  let productsUrls = [
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#bikes",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#parts",
+    "file:///home/gpmania/Desktop/kodego-mini-project-2/products.html#gears",
+  ];
+
+  for (let url of indexUrls) {
+    if ($(document)[0].URL === url) {
+      // Upon loading of page, will render the products
+      loadProducts(bikes, 4); // Render bike products
+      loadProducts(parts, 4); // Render parts products
+      loadProducts(gears, 4); // Render gears products
+    }
+  }
+
+  for (let url of productsUrls) {
+    if ($(document)[0].URL === url) {
+      // Upon loading of page, will render the products
+      loadProducts(bikes, 12); // Render bike products
+      loadProducts(parts, 12); // Render parts products
+      loadProducts(gears, 12); // Render gears products
+    }
+  }
 
   // Click event on the save buttons per product to add the item on saved items
   $(".save").click(function (evt) {
