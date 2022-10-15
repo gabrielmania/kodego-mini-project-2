@@ -40,24 +40,37 @@ const cart = {
       $("#cartItems ul").html("");
     } else {
       for (const item of this.cartItems) {
-        output += `<li class="mb-1">${item.brand} - ${item.qty}
-        ${item.qty > 1 ? "sets" : "set"}
-        <a class="reduceQty btn btn-secondary btn-sm" href="#" 
+        output += `<li class="mb-1">${item.brand} - 
+        Price: <strong> ${formatter.format(item.price * item.qty)}</strong>
+        
+        <br>
+        
+        <a class="reduceQty btn btn-secondary btn-sm ms-5" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-minus"></i></a>
+
+        <span>
+        ${item.qty} ${item.qty > 1 ? "sets" : "set"}
+        </span>
+
         <a class="increaseQty btn btn-secondary btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-plus"></i></a>
-        Price: <stron> ${formatter.format(item.price * item.qty)}</strong>
-        <a class="removeItem btn btn-danger btn-sm" href="#" 
+
+        <a class="removeItem btn btn-warning btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-trash"></i></a></li>`;
       }
+
+      output += `<h5 class="mt-4">Total Amount: ${formatter.format(
+        cart.computeTotalPrice()
+      )}</h5>`;
 
       $("#cartItems #output").html("");
       $("#cartItems ul").html(output);
     }
 
+    // Conditional to disable the buttons if cart is empty
     if (!this.cartItems.length) {
       $("#cartItems #clearCart").addClass("disabled");
       $("#cartItems #checkout").addClass("disabled");
@@ -131,6 +144,7 @@ const cart = {
     this.saveCart();
   },
 
+  // Function for computing the total price of items in the cart
   computeTotalPrice: function () {
     this.loadCart();
     let totalPrice = 0;

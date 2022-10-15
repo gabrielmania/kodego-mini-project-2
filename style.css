@@ -61,6 +61,13 @@ nav img {
   min-width: 30vw;
 }
 
+#savedItems span,
+#cartItems span {
+  text-align: center;
+  display: inline-block;
+  width: 4rem;
+}
+
 /* -------------------- Heading -------------------- */
 #heading {
   /* margin-bottom: 25rem; */

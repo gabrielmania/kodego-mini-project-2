@@ -107,10 +107,12 @@ $(window).on("load", function () {
     }
   }
 
+  // To append the number of items in the cart
   $("#checkoutItems h4").append(
     `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
   );
 
+  // To render the items in the cart in the checkout page
   let output = "";
   cart.cartItems.forEach(function (el) {
     output += `
@@ -125,6 +127,7 @@ $(window).on("load", function () {
     `;
   });
 
+  //  Append the total price in the bottom of the cart items at the checkout page
   output += `
     <li class="list-group-item d-flex justify-content-between">
       <span>Total Price</span>

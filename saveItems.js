@@ -40,16 +40,23 @@ const save = {
       $("#savedItems ul").html("");
     } else {
       for (const item of this.savedItems) {
-        output += `<li class="mb-1">${item.brand} - ${item.qty}
-        ${item.qty > 1 ? "sets" : "set"}
-        <a class="reduceQty btn btn-secondary btn-sm" href="#" 
+        output += `<li class="mb-1">${item.brand} - Price: <strong> 
+        ${formatter.format(item.price * item.qty)}</strong>
+        <br> 
+      
+        <a class="reduceQty btn btn-secondary btn-sm ms-5" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-minus"></i></a>
+
+        <span>
+        ${item.qty} ${item.qty > 1 ? "sets" : "set"}
+        </span>
+
         <a class="increaseQty btn btn-secondary btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-plus"></i></a>
-        Price: <stron> ${formatter.format(item.price * item.qty)}</strong>
-        <a class="removeItem btn btn-danger btn-sm" href="#" 
+      
+        <a class="removeItem btn btn-warning btn-sm" href="#" 
         data-brand="${item.brand}">
         <i class="fa-solid fa-trash"></i></a></li>`;
       }
@@ -58,6 +65,7 @@ const save = {
       $("#savedItems ul").html(output);
     }
 
+    // Conditionals to disable buttons in the saved items
     if (!this.savedItems.length) {
       $("#savedItems #clearSave").addClass("disabled");
     } else if (this.savedItems.length > 0) {
