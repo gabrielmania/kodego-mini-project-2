@@ -61,6 +61,7 @@ function loadProducts(products, numProducts) {
 
 // Window on load event
 $(window).on("load", function () {
+  save.loadItems();
   let indexUrls = [
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html",
     "file:///home/gpmania/Desktop/kodego-mini-project-2/index.html#products",
@@ -102,6 +103,7 @@ $(window).on("load", function () {
 
     console.log(`${brand} costing ${price} added to saved items!`);
     save.addToSavedItems(brand, price, 1);
+    save.displaySavedItems();
   });
 });
 

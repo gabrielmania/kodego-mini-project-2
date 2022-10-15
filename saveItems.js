@@ -19,7 +19,7 @@ const save = {
 
     for (const i of this.savedItems) {
       if (i.brand === brand) {
-        i.qty += qty;
+        i.qty++;
         this.saveItems();
         return;
       }
