@@ -95,13 +95,13 @@ function loadProducts(products, numProducts) {
     );
   }
 }
-
+// Function for loading cart items in checkout page
 function loadCheckoutPageItems() {
   cart.loadCart();
-  
+
   // To append the number of items in the cart
   $("#checkoutItems h4").append(
-    `<span class="badge bg-primary rounded-pill">${cart.cartItems.length}</span>`
+    `<span class="badge bg-success rounded-pill">${cart.cartItems.length}</span>`
   );
 
   // To render the items in the cart in the checkout page
