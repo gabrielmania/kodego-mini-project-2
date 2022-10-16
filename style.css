@@ -1,3 +1,52 @@
+/* -------------------- Keyframes -------------------- */
+@keyframes wheel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-1 {
+  from {
+    position: relative;
+    opacity: 0;
+    right: 100px;
+  }
+
+  to {
+    position: relative;
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes slide-in-2 {
+  from {
+    position: relative;
+    opacity: 0;
+    right: -100px;
+  }
+
+  to {
+    position: relative;
+    opacity: 1;
+    right: 0px;
+  }
+}
+
 /* -------------------- Background Color -------------------- */
 body {
   background-color: #F5EFE6;
@@ -76,7 +125,6 @@ nav img {
 
 /* -------------------- Heading -------------------- */
 #heading {
-  /* margin-bottom: 25rem; */
   min-height: 90vh;
 }
 
@@ -84,6 +132,16 @@ nav img {
   position: absolute;
   z-index: 1;
   top: 0;
+}
+
+#heading img {
+  opacity: 0;
+  animation: fade-in 1s forwards linear;
+}
+
+#heading #headingText {
+  opacity: 0;
+  animation: fade-in 1s 1s forwards linear;
 }
 
 #overlay {
@@ -129,12 +187,41 @@ nav img {
 }
 
 /* -------------------- Products -------------------- */
+#products .row {
+  opacity: 0;
+}
+
+.card-fade-in {
+  animation: fade-in 1.5s forwards linear;
+}
+
 /* XX-Large Breakpoint */
 @media (max-width: 1400px) {
   #products .cardBtn {
     display: block;
     margin-bottom: 0.25rem;
   }
+}
+
+/* -------------------- Services -------------------- */
+#services .card {
+  opacity: 0;
+}
+
+.card-slide-in-1 {
+  animation: slide-in-1 1s forwards linear;
+}
+
+.card-slide-in-2 {
+  animation: slide-in-2 1s 0.5s forwards linear;
+}
+
+.card-slide-in-3 {
+  animation: slide-in-1 1s 1s forwards linear;
+}
+
+.card-slide-in-4 {
+  animation: slide-in-2 1s 1.5s forwards linear;
 }
 
 /* -------------------- About Us -------------------- */
@@ -204,14 +291,4 @@ input[type=radio]:checked~div {
 /* -------------------- Processing Page -------------------- */
 #bikeWheel {
   animation: wheel-spin infinite 20s linear;
-}
-
-@keyframes wheel-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }

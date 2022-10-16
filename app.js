@@ -282,3 +282,36 @@ $("#paymentOptions").change(function () {
     `);
   }
 });
+
+// Animation for producst and services section
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      if (entry.target.classList.contains("productRow")) {
+        entry.target.classList.add("card-fade-in");
+      }
+      if (entry.target.classList.contains("serviceCard1")) {
+        entry.target.classList.add("card-slide-in-1");
+      }
+      if (entry.target.classList.contains("serviceCard2")) {
+        entry.target.classList.add("card-slide-in-2");
+      }
+      if (entry.target.classList.contains("serviceCard3")) {
+        entry.target.classList.add("card-slide-in-3");
+      }
+      if (entry.target.classList.contains("serviceCard4")) {
+        entry.target.classList.add("card-slide-in-4");
+      }
+    }
+  });
+});
+
+const cards = $("#products .row");
+for (const card of cards) {
+  observer.observe(card);
+}
+
+observer.observe(document.querySelector("#services .serviceCard1"));
+observer.observe(document.querySelector("#services .serviceCard2"));
+observer.observe(document.querySelector("#services .serviceCard3"));
+observer.observe(document.querySelector("#services .serviceCard4"));
