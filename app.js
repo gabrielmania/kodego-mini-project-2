@@ -207,6 +207,7 @@ $("section").click(function () {
   $("#cartItems").css("display", "none");
 });
 
+// Render a different form based on the chosen payment method
 $("#paymentOptions").change(function () {
   let radioValue = $("input[name=paymentMethod]:checked").val();
   if (radioValue === "credit") {
