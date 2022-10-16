@@ -68,6 +68,12 @@ nav img {
   width: 4rem;
 }
 
+/* -------------------- Toast -------------------- */
+#saveNotif,
+#cartNotif {
+  background-color: #E8DFCA;
+}
+
 /* -------------------- Heading -------------------- */
 #heading {
   /* margin-bottom: 25rem; */

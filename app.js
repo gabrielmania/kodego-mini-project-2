@@ -45,6 +45,16 @@ $(window).on("load", function () {
     console.log(`${brand} costing ${price} added to saved items!`);
     save.addToSavedItems(brand, price, 1);
     save.displaySavedItems();
+
+    // Bootstrap toast for showing notification when item is saved
+    const notifDiv = $("#saveNotif");
+    const toast = new bootstrap.Toast(notifDiv);
+
+    $("#saveNotif .toast-body").html(`
+      <strong>${brand}</strong> has been added to your Saved Items!
+    `);
+
+    toast.show();
   });
 
   // Click event on the save buttons per product to add the item on saved items
@@ -56,6 +66,16 @@ $(window).on("load", function () {
     console.log(`${brand} costing ${price} added to cart!`);
     cart.addToCart(brand, price, 1);
     cart.displayCartItems();
+
+    // Bootstrap toast for showing notification when item is added to cart
+    const notifDiv = $("#cartNotif");
+    const toast = new bootstrap.Toast(notifDiv);
+
+    $("#cartNotif .toast-body").html(`
+       <strong>${brand} - ${formatter.format(price)}</strong> has been added to your cart!
+     `);
+
+    toast.show();
   });
 });
 
