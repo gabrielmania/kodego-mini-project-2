@@ -194,3 +194,18 @@ input[type=radio]~div {
 input[type=radio]:checked~div {
   border: 3px solid blue;
 }
+
+/* -------------------- Processing Page -------------------- */
+#bikeWheel {
+  animation: wheel-spin infinite 20s linear;
+}
+
+@keyframes wheel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
