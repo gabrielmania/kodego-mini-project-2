@@ -32,7 +32,9 @@ const formatter = new Intl.NumberFormat("en-US", {
 $(window).on("load", function () {
   // Load saved items and cart items every reload
   save.loadItems();
+  save.displaySavedItems();
   cart.loadCart();
+  cart.displayCartItems();
 
   // Click event on the save buttons per product to add the item on saved items
   $(".save").click(function (evt) {
@@ -183,4 +185,79 @@ $("#clearCart").click(function () {
 $("section").click(function () {
   $("#savedItems").css("display", "none");
   $("#cartItems").css("display", "none");
+});
+
+$("#paymentOptions").change(function () {
+  let radioValue = $("input[name=paymentMethod]:checked").val();
+  if (radioValue === "credit") {
+    $("#paymentForm").html(`
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <label for="cc-name" class="form-label">Name on card</label>
+        <input type="text" class="form-control" id="cc-name" placeholder="Juan dela Cruz" required>
+        <small class="text-muted">Full name as displayed on card</small>
+        <div class="invalid-feedback">
+          Name on card is required
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="cc-number" class="form-label">Credit card number</label>
+        <input type="text" class="form-control" id="cc-number" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+        <div class="invalid-feedback">
+          Credit card number is required
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="cc-expiration" class="form-label">Expiration</label>
+        <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
+        <div class="invalid-feedback">
+          Expiration date required
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="cc-cvv" class="form-label">CVV</label>
+        <input type="text" class="form-control" id="cc-cvv" placeholder="000" required>
+        <div class="invalid-feedback">
+          Security code required
+        </div>
+      </div>
+    </div>
+    `);
+  } else if (radioValue === "gcash") {
+    $("#paymentForm").html(`
+    <div class="row">
+      <img class="w-50 mx-auto rounded-5" src="images/payments/gcash.jpg">
+    </div>
+    `);
+  } else if (radioValue === "paymaya") {
+    $("#paymentForm").html(`
+    <div class="row">
+      <img class="w-50 mx-auto rounded-5" src="images/payments/paymaya.jpg">
+    </div>
+    `);
+  } else if (radioValue === "paypal") {
+    $("#paymentForm").html(`
+    <div class="row gy-3">
+      <h5 class="text-center">Login to your Paypal account!</h5>
+      <div class="col-md-6">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="juandelacruz01" required>
+        <div class="invalid-feedback">
+          Your username is required
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="******" required>
+        <div class="invalid-feedback">
+          Your password is required
+        </div>
+      </div>
+    </div>
+    `);
+  }
 });

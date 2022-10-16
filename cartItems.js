@@ -105,6 +105,13 @@ const cart = {
       cart.increaseQty(brand);
       cart.displayCartItems();
     });
+
+    // Displays a badge beside the cart
+    if (this.cartItems.length) {
+      $("nav #badge").html(cart.cartItems.length);
+    } else if (this.cartItems.length === 0) {
+      $("nav #badge").html("");
+    }
   },
 
   // For clearing the cart
