@@ -315,3 +315,12 @@ observer.observe(document.querySelector("#services .serviceCard1"));
 observer.observe(document.querySelector("#services .serviceCard2"));
 observer.observe(document.querySelector("#services .serviceCard3"));
 observer.observe(document.querySelector("#services .serviceCard4"));
+
+// For opening and closing the chatbox
+$("#openChat").click(function () {
+  $("#myForm").toggle();
+});
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}

@@ -292,3 +292,31 @@ input[type=radio]:checked~div {
 #bikeWheel {
   animation: wheel-spin infinite 20s linear;
 }
+
+/* -------------------- Chatbox -------------------- */
+#openChat {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 4;
+}
+
+.chat-popup {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 4;
+  display: none;
+  border: 1px solid black;
+}
+
+/* Add styles to the form container */
+.form-container {
+  min-width: 400px;
+  padding: 10px;
+  background-color: #F5EFE6;
+}
+
+.form-container textarea {
+  height: 100px;
+}
